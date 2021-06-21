@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import {url} from "./url";
 
 export default class Application extends Component {
   // state
@@ -16,9 +17,12 @@ export default class Application extends Component {
   };
 
   getAllData = () => {
-    axios({ url: "/jobs/getalljobsdetails", method: "GET" })
+    axios({ url: `${url}/jobs/getalljobsdetails`, method: "GET" })
       .then((response) => {
         const data = response.data;
+        console.log("reflect change");
+        console.log(data);
+        console.log(response);
         this.setState({ allData: data });
         console.log("Data has been received");
       })

@@ -3,13 +3,14 @@ import axios from "axios";
 import Navbar from "./Navbar";
 import {Button,Link} from "@material-ui/core"
 import Footer from "./Footer"
+import {url} from "./url"
 
 export default function ApplicationSubmit({ match }) {
   const [job, getJob] = useState({})
 
   useEffect(() => {
     const fetchJob = async() => {
-      const data  = await axios.get(`/jobs/getsinglejobdetails/${match.params.jobId}`)
+      const data  = await axios.get(`${url}/jobs/getsinglejobdetails/${match.params.jobId}`)
 
       getJob(data.data.data1)
     }

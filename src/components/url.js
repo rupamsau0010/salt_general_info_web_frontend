@@ -1,0 +1,1 @@
+export const url = "https://backend-info-saltecosystem.herokuapp.com";

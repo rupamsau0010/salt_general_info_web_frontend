@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import axios from "axios";
+import {url} from "./url";
 
 export default class Footer extends Component {
   // state.
@@ -29,7 +30,7 @@ export default class Footer extends Component {
       type: this.state.type,
     };
 
-    axios({ url: "/join/joinusmessages", method: "POST", data: payload })
+    axios({ url: `${url}/join/joinusmessages`, method: "POST", data: payload })
       .then((response) => {
         // const date = response.data;
         console.log(response.data.status);
